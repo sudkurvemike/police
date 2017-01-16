@@ -1,0 +1,142 @@
+curl -XPUT 'localhost:9200/policenew' -d'{
+  "police" : {
+    "mappings" : {
+      "data" : {
+        "properties" : {
+          "@timestamp" : {
+            "type" : "date"
+          },
+          "@version" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "at_scene_time" : {
+            "type" : "date"
+          },
+          "cad_cdw_id" : {
+            "type" : "long"
+          },
+          "cad_event_number" : {
+            "type" : "long"
+          },
+          "census_tract" : {
+            "type" : "float"
+          },
+          "district_sector" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "event_clearance_code" : {
+            "type" : "long"
+          },
+          "event_clearance_date" : {
+            "type" : "date"
+          },
+          "event_clearance_description" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "event_clearance_group" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "event_clearance_subgroup" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "general_offense_number" : {
+            "type" : "long"
+          },
+          "hundred_block_location" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "initial_type_description" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "initial_type_group" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "initial_type_subgroup" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "latitude" : {
+            "type": "float" {
+              "properties": {
+                "location": {
+                  "type": "geo_point"
+                }
+              }
+            }
+          },
+          "longitude" : {
+            "type": "float" {
+              "properties": {
+                "location": {
+                  "type": "geo_point"
+                }
+              }
+            }
+          }
+          "zone_beat" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
